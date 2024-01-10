@@ -78,10 +78,10 @@
         input[type='Submit']
         {
             border: none;
-            color: white;
+            color: black;
             padding: 8px 16px;
-            background-image: linear-gradient(to right, blue, lightblue);
-            cursor: pointer;
+            
+            cursor: pointer; 
             transition: font-size 1s;
             
         }
@@ -104,7 +104,20 @@
             from {width:5%} to {width: 30%} 
         }
 
-    </style>
+        .submit-disabled
+         {
+            cursor: not-allowed;
+            pointer-events: none;
+            background-image: linear-gradient(to right, rgb(0, 255, 170), lightblue);
+         }
+        
+
+         #textCount{
+            color: lightsalmon;
+            margin-left: 32%;
+
+         }
+        </style>
 </head>
 
 <body>
@@ -112,16 +125,16 @@
     <form name="Registration" onsubmit="return validation ()">
         <div id="name-email">
             <label for="First_Name">First Name</label>
-            <input type="text" name="First_Name" placeholder="First Name" id="first_name" />
+            <input type="text" name="First_Name" placeholder="First Name" onkeyup="activateSubmit()" id="first_name" />
             <br />
 
 
             <label for="Last_Name">Last Name</label>
-            <input type="text" name="Last_Name" placeholder="Last Name" id="last_name" />
+            <input type="text" name="Last_Name" placeholder="Last Name" onkeyup="activateSubmit()" id="last_name" />
             <br />
 
             <label for="email">Email</label>
-            <input type="email" name="Email" placeholder="Email" id="email" />
+            <input type="email" name="Email" placeholder="Email" onkeyup="activateSubmit()" id="email" />
             <br />
         </div>
 
@@ -150,14 +163,15 @@
 
         <div id="msg-sub">
             <label for="message">Message</label>
-            <textarea name="message" id="message" rows="10"></textarea> <br />
+            <textarea name="message" id="message" rows="10" onkeyup="countText()"></textarea> <br />  
+            <p id="textCount" > 0/100</p>
             <input type="checkbox" name="newsletter" id="newsletter" />
             <label for="newsletter">Subscribe</label> <br />
     
         </div>
     
        
-        <input type="Submit" value="submit" />
+        <input class="submit-disabled" id="Submit" type="Submit" value="submit" />
    
 
     </form>
