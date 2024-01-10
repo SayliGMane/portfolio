@@ -9,7 +9,7 @@
         input[type="text"],
         input[type="email"] {
             margin: 10px;
-            margin-bottom: 20px;
+            transition: background-color 2s;
 
         }
 
@@ -51,6 +51,59 @@
         #msg-sub{
             background-color: cornsilk;
         }
+
+        input[type='text']:hover,
+        input[type='email']:hover,
+        textarea:hover
+        {
+
+            background-color: rgb(218, 238, 243);
+        }
+
+        input[type='submit']:hover
+        {
+            font-size: x-large ;
+        
+        }
+     
+        input[type='text']:focus,
+        input[type='email']:focus,
+        textarea:focus
+        {
+
+            background-color: lightgray
+        }
+
+
+        input[type='Submit']
+        {
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            background-image: linear-gradient(to right, blue, lightblue);
+            cursor: pointer;
+            transition: font-size 1s;
+            
+        }
+
+        input[type='submit']:active{
+            font-size:xx-small;
+            background-color: lightblue;
+        }
+
+        textarea
+        {
+            /* background-color: brown; */
+            transition: background-color 2s;
+            animation-name: text-area;
+            animation-duration: 4s;
+            width: 30%;
+        } 
+        @keyframes text-area
+        {
+            from {width:5%} to {width: 30%} 
+        }
+
     </style>
 </head>
 
@@ -97,7 +150,7 @@
 
         <div id="msg-sub">
             <label for="message">Message</label>
-            <textarea name="message" id="message"></textarea> <br />
+            <textarea name="message" id="message" rows="10"></textarea> <br />
             <input type="checkbox" name="newsletter" id="newsletter" />
             <label for="newsletter">Subscribe</label> <br />
     
